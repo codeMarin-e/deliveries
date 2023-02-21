@@ -1,0 +1,31 @@
+{
+    "name": "marinar/deliveries",
+    "description": "Deliveries modulе",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Marin",
+            "email": "marin@dev.nddesign.no"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Marinar\\Deliveries\\": "src/"
+        }
+    },
+
+    "require": {
+        "marinar/marinar": "*",
+        "marinar/orderable": "*",
+        "marinar/payments": "*",
+        "marinar/discountable": "*"
+    },
+    "extra": {
+        "marinar": {
+            "module": true,
+            "plugin": false,
+            "addon_to": false
+        }
+    }
+}
