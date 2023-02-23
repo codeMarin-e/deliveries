@@ -14,6 +14,9 @@ Route::group([
     Route::get('create', 'create')->name('create')->middleware('can:create,'.DeliveryMethod::class);
     Route::get('{chDeliveryMethod}/edit', 'edit')->name('edit');
     Route::get('{chDeliveryMethod}/move/{direction}', "move")->name('move')->middleware('can:update,chDeliveryMethod');
+
+    // @HOOK_ROUTES_MODEL
+
     Route::get('{chDeliveryMethod}', 'edit')->name('show');
     Route::patch('{chDeliveryMethod}', 'update')->name('update')->middleware('can:update,chDeliveryMethod');
     Route::delete('{chDeliveryMethod}', 'destroy')->name('destroy')->middleware('can:delete,chDeliveryMethod');

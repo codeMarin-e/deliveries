@@ -26,6 +26,7 @@ return new class extends Migration
             $table->boolean('active')->default(0);
             $table->integer('ord')->default(0);
             $table->timestamps();
+            $table->foreign('site_id')->references('id')->on('sites')->onDelete('cascade');
         });
 
         Schema::create('delivery_methods_payment_methods', function (Blueprint $table) {

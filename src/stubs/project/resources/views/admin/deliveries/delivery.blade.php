@@ -298,11 +298,15 @@
                                         name='create'>@lang('admin/deliveries/delivery.create')</button>
                             @endcan
                         @endisset
+
+                        {{-- @HOOK_AFTER_BUTTONS --}}
+
                         <a class='btn btn-warning'
                            href="{{ route("{$route_namespace}.deliveries.index") }}"
                         >@lang('admin/deliveries/delivery.cancel')</a>
                     </div>
 
+                    {{-- @HOOK_ADDON_BUTTONS --}}
                 </form>
             </div>
         </div>
