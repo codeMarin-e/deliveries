@@ -69,7 +69,9 @@ class DeliveryMethodRequest extends FormRequest
         $this->errorBag = $inputBag;
         $inputs = $this->all();
         if(!isset($inputs[$inputBag])) {
-            throw new ValidationException(trans('admin/deliveries/validation.no_inputs') );
+            throw ValidationException::withMessages([
+                $inputBag => trans('admin/deliveries/validation.no_inputs'),
+            ])->errorBag($inputBag);;
         }
         $inputs[$inputBag]['pm'] = isset($inputs[$inputBag]['pm'])? (array)$inputs[$inputBag]['pm'] : [];
         $inputs[$inputBag]['default2'] = isset($inputs[$inputBag]['default2']);
